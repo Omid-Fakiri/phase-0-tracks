@@ -15,5 +15,3 @@
   `A merge conflict occurs when you have commits in your current branch which are not in the other branch, and vice versa. Or, an instance in which two people change the same lines in that same file, or if one person decides to delete it while the other person decides to modify it, Git simply cannot know what is correct. Git will then mark the file as having a conflict - which you'll have to solve before you can continue your work.`
 
   *Note:* I did google a majority of these definitions in order to provide quality explanations of these terms.  With that said, I feel that I do have a strong grasp of these terms.  Otherwise, I would not have made it to this point of the curriculum.
-
-  *Note 2:* This note is the addition written in regards to the Release 2 portion of the assignment.  If Tyler sees this, along with the rest of the document in his PR, then this was done correctly...I think.
