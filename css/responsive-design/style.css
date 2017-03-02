@@ -25,12 +25,12 @@ image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 
 body {
-  width: 960px;
+  max-width: 960px;
 }
 
 main {
   width: 756px;
-  display: inline-block;
+  display: center;
   vertical-align: middle;
 }
 
@@ -47,3 +47,13 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 980px) {
+  img {
+    width: 30%;
+  } 
+
+@media screen and (max-width: 980px) {
+  main {
+    font-size: 0.75em;
+  } 
