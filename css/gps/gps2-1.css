@@ -5,6 +5,10 @@ header {
   margin: 1px;
 }
 
+section {
+  background-image: url(http://graphicdesignjunction.com/wp-content/uploads/2012/10/background+pattern+design+33.jpg);
+}
+
 section.column-1 {
   width: 48%;
   display: inline-block;
