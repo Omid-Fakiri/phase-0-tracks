@@ -1,3 +1,9 @@
+body {
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
 header {
   color: white;
   background-image: url(http://d352ltojookjzf.cloudfront.net/wp-content/uploads/2013/12/15-icon-patterns.jpg);
