@@ -16,3 +16,7 @@ section.column-2 {
   display: inline-block;
   vertical-align: top;
 }
+
+footer {
+  background-color: gray;
+}
