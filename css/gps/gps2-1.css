@@ -1,0 +1,11 @@
+section.column-1 {
+  width: 48%;
+  display: inline-block;
+}
+
+section.column-2 {
+  width: 48%;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
