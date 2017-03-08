@@ -1,0 +1,17 @@
+- Until the elevator door opens:
+	- If you want to go to a higher floor, press the Up button.
+	- Otherwise, if you want to go to a lower floor, press the Down button.
+- Walk inside the elevator once it opens.
+
+- For each time the elevator door is already open when you get there:
+	- While you see the light indicating it is going up:
+		- If there is space to go inside the elevator, walk inside of it.
+		- Otherwise, stay on the floor that you are in.
+	- While you see the light indicating it is going down:
+		- If there is space to go inside the elevator, walk inside of it.
+		- Otherwise, stay on the floor that you are in.
+
+- While inside the elevator:
+	- If you pressed the Up button earlier, press a floor that is higher than the current floor that you are in.
+	- Otherwise, if you pressed the Down button earlier, press a floor that is lower than the current floor that you are in.
+- Walk outside of the elevator once it opens.
