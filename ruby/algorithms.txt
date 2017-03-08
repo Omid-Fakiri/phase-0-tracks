@@ -10,3 +10,8 @@
 	- While you see the light indicating it is going down:
 		- If there is space to go inside the elevator, walk inside of it.
 		- Otherwise, stay on the floor that you are in.
+
+- While inside the elevator:
+	- If you pressed the Up button earlier, press a floor that is higher than the current floor that you are in.
+	- Otherwise, if you pressed the Down button earlier, press a floor that is lower than the current floor that you are in.
+- Walk outside of the elevator once it opens.
