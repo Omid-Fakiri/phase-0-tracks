@@ -1,3 +1,20 @@
+body {
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+header {
+  color: white;
+  background-image: url(http://d352ltojookjzf.cloudfront.net/wp-content/uploads/2013/12/15-icon-patterns.jpg);
+  padding: 2px;
+  margin: 1px;
+}
+
+section {
+  background-image: url(http://graphicdesignjunction.com/wp-content/uploads/2012/10/background+pattern+design+33.jpg);
+}
+
 section.column-1 {
   width: 48%;
   display: inline-block;
@@ -8,4 +25,8 @@ section.column-2 {
   position: relative;
   display: inline-block;
   vertical-align: top;
+}
+
+footer {
+  background-color: gray;
 }
