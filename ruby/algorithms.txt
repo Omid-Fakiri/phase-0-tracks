@@ -1,0 +1,4 @@
+- Until the elevator door opens:
+	- If you want to go to a higher floor, press the Up button.
+	- Otherwise, if you want to go to a lower floor, press the Down button.
+- Walk inside the elevator once it opens.
