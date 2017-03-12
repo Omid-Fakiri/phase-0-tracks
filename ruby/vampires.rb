@@ -26,6 +26,25 @@ until insurance == "yes" || insurance == "no"
 	insurance = gets.chomp.downcase
 end
 
+puts "Please list the items you are allergic to one at a time. (say done when finished)"
+allergy = gets.chomp.downcase
+
+until allergy == "done" || allergy == "sunshine"
+	allergy = gets.chomp.downcase
+end
+
+if (user_name != "Drake Cula" && user_name != "Tu Fang") && (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes") && (allergy != "sunshine") 
+	puts "Probably not a vampire."
+elsif (allergy == "sunshine")
+	puts "Probably a vampire."
+elsif (user_name != "Drake Cula" && user_name != "Tu Fang") && (age != verified_age && age != verified_age - 1) && (bread == "no" && insurance == "no")
+	puts "Almost certainly a vampire."
+elsif (user_name == "Drake Cula" || user_name == "Tu Fang")
+	puts "Definitely a vampire."
+else
+	puts "Results inconclusive."
+end
+
 =begin
 if (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes")
 	puts "Probably not a vampire."
@@ -72,14 +91,3 @@ else
 end
 =end
 #This takes care of all the statements
-if (user_name != "Drake Cula" && user_name != "Tu Fang") && (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes")
-	puts "Probably not a vampire."
-elsif (user_name != "Drake Cula" && user_name != "Tu Fang") && (age != verified_age && age != verified_age - 1) && (bread == "yes" || insurance == "yes")
-	puts "Probably a vampire."
-elsif (user_name != "Drake Cula" && user_name != "Tu Fang") && (age != verified_age && age != verified_age - 1) && (bread == "no" && insurance == "no")
-	puts "Almost certainly a vampire."
-elsif (user_name == "Drake Cula" || user_name == "Tu Fang")
-	puts "Definitely a vampire."
-else
-	puts "Results inconclusive."
-end
