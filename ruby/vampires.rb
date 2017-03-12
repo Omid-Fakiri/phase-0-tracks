@@ -45,6 +45,8 @@ else
 	puts "Results inconclusive."
 end
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
 =begin
 if (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes")
 	puts "Probably not a vampire."
