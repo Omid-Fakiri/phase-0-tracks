@@ -5,3 +5,12 @@ This is the algorithm for the code:
 - The output will be returned as a hash.
 - The user will have an opportunity to update the client's details with an if/else statement.
 =end
+
+client_info {
+	name: "#{client_name}"
+	age: "#{age}"
+	number_of_children: "#{kids}"
+	number_of_rooms: "#{rooms}"
+	decor_theme: "#{theme}"
+}
+
