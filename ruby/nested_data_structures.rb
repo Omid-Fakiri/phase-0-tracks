@@ -41,3 +41,15 @@ executive_branch = {
 }
 
 p executive_branch
+
+executive_branch[:cabinet][:names].each do |person| 
+	p person
+end
+
+executive_branch[:cabinet].each do |person, value| 
+	p value[1]
+end
+
+p executive_branch[:us_president][:names][0].replace("Hillary Clinton")
+p executive_branch[:us_president][:genders][0].replace('f')
+p executive_branch
