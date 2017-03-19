@@ -13,3 +13,30 @@ spy.reverse_each { |new| str += "#{new} " }
 #puts str
 
 puts str.gsub(/[abcdefghijklmnopqrstuvwxyzABCDEFGIJKLMNOPQRSTUVWXYZ]/, 'a' => 'e', 'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a', 'A' => 'E', 'E' => 'I', 'I' => 'O', 'O' => 'U', 'U' => 'A', 'b' => 'c', 'c' => 'd', 'd' => 'f', 'f' => 'g', 'g' => 'h', 'h' => 'j', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'n' => 'p', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 't' => 'v', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z', 'z' => 'b', 'B' => 'C', 'C' => 'D', 'D' => 'F', 'F' => 'G', 'G' => 'H', 'H' => 'J', 'J' => 'K', 'K' => 'L', 'L' => 'M', 'M' => 'N', 'N' => 'P', 'P' => 'Q', 'Q' => 'R', 'R' => 'S', 'S' => 'T', 'T' => 'V', 'V' => 'W', 'W' => 'X', 'X' => 'Y', 'Y' => 'Z', 'Z' => 'B')
+
+=begin
+-This is for Release 1
+-This will need to provide the user an opportunity to provide the name of the 
+ agent.  
+-The user will need to keep inputting names until the user wants to stop.
+-The user will have the opportunity to stop running the program by typing
+ 'quit', 'Quit', or 'QUIT'.
+=end
+
+loop do 
+  
+  puts "What's your first name?"
+  fname = gets.chomp
+  
+  break if fname == "quit" || fname == "Quit" || fname == "QUIT"
+  
+  puts "What's your last name?"
+  lname = gets.chomp
+
+  lname.gsub(/[abcdefghijklmnopqrstuvwxyzABCDEFGIJKLMNOPQRSTUVWXYZ]/, 'a' => 'e', 'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a', 'A' => 'E', 'E' => 'I', 'I' => 'O', 'O' => 'U', 'U' => 'A', 'b' => 'c', 'c' => 'd', 'd' => 'f', 'f' => 'g', 'g' => 'h', 'h' => 'j', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'n' => 'p', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 't' => 'v', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z', 'z' => 'b', 'B' => 'C', 'C' => 'D', 'D' => 'F', 'F' => 'G', 'G' => 'H', 'H' => 'J', 'J' => 'K', 'K' => 'L', 'L' => 'M', 'M' => 'N', 'N' => 'P', 'P' => 'Q', 'Q' => 'R', 'R' => 'S', 'S' => 'T', 'T' => 'V', 'V' => 'W', 'W' => 'X', 'X' => 'Y', 'Y' => 'Z', 'Z' => 'B')
+
+  fname.gsub(/[abcdefghijklmnopqrstuvwxyzABCDEFGIJKLMNOPQRSTUVWXYZ]/, 'a' => 'e', 'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a', 'A' => 'E', 'E' => 'I', 'I' => 'O', 'O' => 'U', 'U' => 'A', 'b' => 'c', 'c' => 'd', 'd' => 'f', 'f' => 'g', 'g' => 'h', 'h' => 'j', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'n' => 'p', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 't' => 'v', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z', 'z' => 'b', 'B' => 'C', 'C' => 'D', 'D' => 'F', 'F' => 'G', 'G' => 'H', 'H' => 'J', 'J' => 'K', 'K' => 'L', 'L' => 'M', 'M' => 'N', 'N' => 'P', 'P' => 'Q', 'Q' => 'R', 'R' => 'S', 'S' => 'T', 'T' => 'V', 'V' => 'W', 'W' => 'X', 'X' => 'Y', 'Y' => 'Z', 'Z' => 'B')
+
+puts "This is your new name: #{lname.gsub(/[abcdefghijklmnopqrstuvwxyzABCDEFGIJKLMNOPQRSTUVWXYZ]/, 'a' => 'e', 'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a', 'A' => 'E', 'E' => 'I', 'I' => 'O', 'O' => 'U', 'U' => 'A', 'b' => 'c', 'c' => 'd', 'd' => 'f', 'f' => 'g', 'g' => 'h', 'h' => 'j', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'n' => 'p', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 't' => 'v', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z', 'z' => 'b', 'B' => 'C', 'C' => 'D', 'D' => 'F', 'F' => 'G', 'G' => 'H', 'H' => 'J', 'J' => 'K', 'K' => 'L', 'L' => 'M', 'M' => 'N', 'N' => 'P', 'P' => 'Q', 'Q' => 'R', 'R' => 'S', 'S' => 'T', 'T' => 'V', 'V' => 'W', 'W' => 'X', 'X' => 'Y', 'Y' => 'Z', 'Z' => 'B')} #{fname.gsub(/[abcdefghijklmnopqrstuvwxyzABCDEFGIJKLMNOPQRSTUVWXYZ]/, 'a' => 'e', 'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a', 'A' => 'E', 'E' => 'I', 'I' => 'O', 'O' => 'U', 'U' => 'A', 'b' => 'c', 'c' => 'd', 'd' => 'f', 'f' => 'g', 'g' => 'h', 'h' => 'j', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'n' => 'p', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 't' => 'v', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z', 'z' => 'b', 'B' => 'C', 'C' => 'D', 'D' => 'F', 'F' => 'G', 'G' => 'H', 'H' => 'J', 'J' => 'K', 'K' => 'L', 'L' => 'M', 'M' => 'N', 'N' => 'P', 'P' => 'Q', 'Q' => 'R', 'R' => 'S', 'S' => 'T', 'T' => 'V', 'V' => 'W', 'W' => 'X', 'X' => 'Y', 'Y' => 'Z', 'Z' => 'B')}"
+puts ""
+end
