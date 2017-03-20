@@ -1,14 +1,14 @@
 puts "What is your name?"
-user_name = gets.to_s
+user_name = gets.chomp.to_s
 
 puts "How old are you? (age number only)"
-age = gets.to_i
+age = gets.chomp.to_i
 
 puts "What year were you born? (year number only)"
-year = gets.to_i
+year = gets.chomp.to_i
 
 current_year = Time.now.year
-verified age = current_year - year
+verified_age = current_year - year
 
 puts "We have some garlic bread in the cafeteria. Would you like some? (yes or no)"
 bread = gets.chomp.downcase
@@ -19,10 +19,21 @@ until bread == "yes" || bread == "no"
 end
 
 puts "Would you like to enroll in our health insurance plan? (yes or no)"
-insurannce = gets.chomp.downcase
+insurance = gets.chomp.downcase
 
 until insurance == "yes" || insurance == "no"
 	puts "Would you like to enroll in our health insurance plan? (yes or no)"
-	insurannce = gets.chomp.downcase
+	insurance = gets.chomp.downcase
 end
 
+if user_name == "Drake Cula" || user_name == "Tu Fang"
+	puts "Definitely a vampire."
+elsif (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes")
+	puts "Probably not a vampire."
+elsif (age != verified_age && age != verified_age - 1) && (bread == "yes" || insurance == "yes")
+	puts "Probably a vampire."
+elsif (age != verified_age && age != verified_age - 1 && bread == "no" && insurance == "no") 
+	puts "Almost certainly a vampire."
+else
+	puts "Results inconclusive."
+end 
