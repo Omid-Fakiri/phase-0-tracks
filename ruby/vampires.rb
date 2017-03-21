@@ -33,9 +33,17 @@ while count < employees
 			insurance = gets.chomp.downcase
 		end
 
+		puts "Please list things that you are allergic to one at a time. (Type 'done' when finished)"
+		allergy = gets.chomp.downcase
 
+		until allergy == "done"
+			allergy = gets.chomp.downcase
+				break if allergy == "sunshine"
+		end
 
-	if user_name == "Drake Cula" || user_name == "Tu Fang"
+	if allergy == "sunshine"
+		puts "Probably a vampire."
+	elsif user_name == "Drake Cula" || user_name == "Tu Fang"
 		puts "Definitely a vampire."
 	elsif (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes")
 		puts "Probably not a vampire."
@@ -45,7 +53,7 @@ while count < employees
 		puts "Almost certainly a vampire."
 	else
 		puts "Results inconclusive."
-	end 
+	end
 
-	count += 1
+	count += 1 
 end
