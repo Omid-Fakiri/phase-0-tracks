@@ -57,3 +57,5 @@ while count < employees
 
 	count += 1 
 end
+
+puts "Actually, nevermind! What do these questions have to do with anything? Let's all be friends."
