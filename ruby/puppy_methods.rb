@@ -1,5 +1,14 @@
 #This is for Release 0
 class Puppy
+	#The initialize method is for Release 1
+	#Since we put this as the first method in the Puppy class, it was the first thing 
+	#that ran.
+	#Mis-spelling initialize just had the program skip it completely without any
+	#error messages.
+
+  def initialize
+  	puts "Initializing new puppy instance..."
+  end
 
   def fetch(toy)
     puts "I brought back the #{toy}!"
@@ -32,7 +41,7 @@ class Puppy
   	spin.times do p "spin" end
   	puts "Good boy, here's your #{treat}."
   end
-  
+
 end
 
 
