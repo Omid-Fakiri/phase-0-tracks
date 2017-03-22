@@ -74,9 +74,19 @@ class News
 
 end
 
-news = News.new
-puts news.local(8,4)
-puts news.emergency("fire!")
+index = 0
+while index < 50
+	news = News.new
+	archive = []
+	archive << news
+	archive.each do 
+		news.local(8,4)
+		news.emergency("fire!")
+		end
+	index += 1
+end
+
+archive
 
 
 
