@@ -27,6 +27,12 @@ class Puppy
 	puts "The dog's age in dog's years is, #{dog}."
   end
 
+  def trick(spin, treat)
+  	puts "Spin around #{spin} times"
+  	spin.times do p "spin" end
+  	puts "Good boy, here's your #{treat}."
+  end
+  
 end
 
 
@@ -35,6 +41,7 @@ puts puppy.fetch("ball")
 puts puppy.speak(5)
 puts puppy.roll_over
 puts puppy.dog_years(24)
+puts puppy.trick(5, "bone")
 
 
 
