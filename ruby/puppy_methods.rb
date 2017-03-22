@@ -53,7 +53,30 @@ puts puppy.dog_years(24)
 puts puppy.trick(5, "bone")
 
 
+#This is for Release 2
+class News
 
+	def initialize
+		puts "On tonight's news..."
+	end
+
+	def local(time, stories)
+		puts "These are tonight's top #{stories} stories, at #{time}"
+	end
+
+	def emergency(warning)
+		if warning.include?("!")
+			puts warning.upcase
+		else
+			puts warning
+		end
+	end
+
+end
+
+news = News.new
+puts news.local(8,4)
+puts news.emergency("fire!")
 
 
 
