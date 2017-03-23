@@ -1,4 +1,3 @@
-#This is for Release 0
 
 class Santa
 
@@ -14,19 +13,12 @@ class Santa
 		puts "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
+		@rank = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
 
-	def reindeer_ranking(rank)
-		rank = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	end
-
-	def age
-		age = 0
-	end
-	
 end
 
-santa = Santa.new
+santa = Santa.new("gender", "ethnicity")
 puts santa.speak
 puts santa.eat_milk_and_cookies("chocolate chip cookie")
-
