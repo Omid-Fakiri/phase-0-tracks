@@ -16,7 +16,27 @@ class Santa
 		@rank = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
 	end
+
+	def age
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
+	def celebrate_birthday(age)
+		@age += 1
+	end
 	
+  	def get_mad_at(reindeer)
+    	@rank.delete(reindeer)
+    	@rank << (reindeer) 
+  	end
 end
 
 santa = Santa.new("gender", "ethnicity")
@@ -31,4 +51,9 @@ example_genders.length.times do |i|
 end
 
 p santas
-
+santa = Santa.new("male", "black")
+p santa.age
+p santa.ethnicity
+p santa.gender=("half-man, half-robot")
+p santa.get_mad_at("Rudolph")
+p santa.celebrate_birthday(6) 
