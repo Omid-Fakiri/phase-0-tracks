@@ -13,7 +13,7 @@
 
 module Shout
 	def yell(words)
-		puts "I am so #{words}, I don't know how to !"
+		puts "I am so #{words}"
 	end
 end
 
@@ -26,7 +26,7 @@ class Happily
 end
 
 angry = Angry.new
-angry.yell("angry")
+angry.yell("angry" + "!!!" + " :(")
 
 happily = Happily.new
-happily.yell("happy")
+happily.yell("happy" + "!!!" + " :)")
