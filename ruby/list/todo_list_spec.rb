@@ -1,5 +1,6 @@
+require_relative ("todo_list")
 describe TodoList do
-  let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
+  let(:list) { TodoList.new }
 
   it "stores the list items given on initialization" do
     expect(list.get_items).to eq ["do the dishes", "mow the lawn"]
