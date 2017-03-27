@@ -1,0 +1,13 @@
+Psueocode for word game:
+
+-Ask the first user to input the secret word.
+
+-Hide each letter of the word, and replace the letters with the "_" character. Create an ARRAY of letters for the word, DOWNCASE the letters, and JOIN the ARRAY at the end.
+
+-Give the guessing user the amount of guesses that is 2x the length of the word. (Ex: 10 guesses for a word that will look like "_" "_" "_" "_" "_").
+
+-FOR EACH correct guess of a letter, replace the "_" character with the letter(s).  Also, PRINT something to let the user know that he/she is closer to the final answer. And, reduce the guess count by an increment of 1.
+
+-FOR EACH wrong guess of a letter, PRINT something to let the user know that the guess was wrong. And, reduce the guess count by an increment of 1.
+
+-IF the user gets the word within the alotted guesses, PRINT out a congratulatory statement. OTHERWISE, PRINT out a statement to wish the user better luck next time. END the program with either scenario.
