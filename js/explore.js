@@ -10,5 +10,12 @@ Right now, I don't know if there are such options in JavaScript.
 of the characters. If I do it now, I will lose the comment capability here, and the aesthetics will not be as pleasing even if I make the necesssary 
 fixes.
 
+This is for Release 1
+Comparing if/else statements.
+3 differences from JavaScript to Ruby:
+1) In JavaScript, when you set conditional statements with variables, you MUST use parenthesis around the variables.  In Ruby, it is optional.
+You will get an error message if you don't do it in JavaScript.
+2) In JavaScript, you MUST have {} at the beginning and end of your conditional statements.  This is not needed in Ruby.
+3) In JavaScript, when you want to use and else if conditional, you write, "else if".  In Ruby, you write, "elsif".
 
 
