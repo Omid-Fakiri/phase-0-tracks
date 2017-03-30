@@ -44,3 +44,22 @@ for (i = 10; i >= 0; i--) {
 
 This counts from 10 to 0.
 
+This is for Release 4
+
+PSEUDOCODE:
+Write a function that will set a variable as a string.
+Return the reversed string.
+Call the function.
+
+CODE: */
+
+function reverse(s) {
+  return s.split('').reverse().join('');
+}
+
+console.log(reverse("hello"));
+
+
+if (1==1) {
+	console.log(reverse("good"));
+}
