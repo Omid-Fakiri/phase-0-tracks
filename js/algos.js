@@ -9,12 +9,16 @@ var array = ["long phrase","longest phrase","longer phrase"]; //returned "longes
 var array = ["Warriors", "49ers", "Athletics"]; //returned "Athletics" (On index 2)
 var array = ["Web Development", "Live TV", "Small Gigs"]; //returned "Web Development" (On index 3)
 
-if (array[0].length > array[1].length && array[0].length > array[2].length) {
+function calculate(array) {
+  if (array[0].length > array[1].length && array[0].length > array[2].length) {
   console.log(array[0]);
 } else if (array[1].length > array[0].length && array[1].length > array[2].length) {
   console.log(array[1]);
 } else {
   console.log(array[2]);
+}  
 }
+
+calculate(array);
 
 
