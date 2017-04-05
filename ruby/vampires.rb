@@ -55,10 +55,10 @@ while count < employees
 
 	if (age == verified_age || age == verified_age - 1) && (bread == "yes" || insurance == "yes")
 		puts "Probably not a vampire."
-	elsif (age != verified_age && age != verified_age - 1) && (bread == "yes" || insurance == "yes")
-		puts "Probably a vampire."
-	elsif (age != verified_age && age != verified_age - 1 && bread == "no" && insurance == "no") 
+	elsif (age != verified_age && age != verified_age - 1) && (bread == "no" && insurance == "no") 
 		puts "Almost certainly a vampire."
+	elsif (age != verified_age && age != verified_age - 1) && (bread == "no" || insurance == "no")
+		puts "Probably a vampire."
 	else
 		puts "Results inconclusive."
 	end
