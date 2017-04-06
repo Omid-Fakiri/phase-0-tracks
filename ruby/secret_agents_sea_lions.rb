@@ -93,3 +93,11 @@ encrypt("zed") #returned "afe"
 decrypt("bcd") #returned "abc"
 decrypt("afe") #returned "zed"
 #the methods were written that avoided any edge cases.
+
+=begin
+This is for Release 4
+Calling decrypt(encrypt("swordfish")) worked because it took the string result of
+the first method and inputted it into the next method.
+So, it provided 2 results.  The first result was "txpsegjti", which is the encrypt of swordfish.
+The second result was "swordfish", which is the decrypt of the first result.
+=end
