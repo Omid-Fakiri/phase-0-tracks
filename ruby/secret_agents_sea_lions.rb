@@ -44,3 +44,28 @@
    test2.reverse!
    test2 returned "gnirts rehtona" (This is considered a dangerous thing to do)
 =end
+
+=begin
+-This is for Release 2
+
+PSEUDOCODE for encrypt:
+-The .next method would not work, as typing in "z" would lead to "aa" (see line 32)
+-define the encrypt method (with str as the parameter)
+-set the index to 0
+-establish the place variable as the actual alphabet, but add "a" to the end
+=end
+
+def encrypt(str)
+	index = 0
+	place = "abcdefghijklmnopqrstuvwxyza"
+	while index < str.length
+		letter = str[index]
+		alphabet = "abcdefghijklmnopqrstuvwxyz".index(letter)
+		str[index] = place[alphabet + 1]
+		index += 1
+	end
+	p str
+end
+
+
+
