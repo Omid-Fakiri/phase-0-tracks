@@ -86,4 +86,10 @@ def decrypt(str)
 	p str #enables an output based on the call
 end
 
+#This is for Release 3
 
+encrypt("abc") #returned "bcd"
+encrypt("zed") #returned "afe"
+decrypt("bcd") #returned "abc"
+decrypt("afe") #returned "zed"
+#the methods were written that avoided any edge cases.
