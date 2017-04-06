@@ -57,15 +57,33 @@ PSEUDOCODE for encrypt:
 
 def encrypt(str)
 	index = 0
-	place = "abcdefghijklmnopqrstuvwxyza"
-	while index < str.length
-		letter = str[index]
-		alphabet = "abcdefghijklmnopqrstuvwxyz".index(letter)
-		str[index] = place[alphabet + 1]
-		index += 1
+	place = "abcdefghijklmnopqrstuvwxyza" #putting an "a" at the end enables "z" to be read as "a" during the call that includes "z".
+	while index < str.length #uses .length to loop through the string that is called
+		letter = str[index] #establishes labeling each index of the string
+		alphabet = "abcdefghijklmnopqrstuvwxyz".index(letter) #enables letter to be called out by it's index number.
+		str[index] = place[alphabet + 1] #takes the letter called in str, and advances it to the next index.
+		index += 1 #prevents the program from being locked up.
 	end
-	p str
+	p str #enables an output based on the call
 end
 
+=begin
+PSEUDOCODE for decrypt:
+-define the decrypt method (with str as the parameter)
+-set the index to 0
+-establish the place variable as the actual alphabet.
+=end
+
+def decrypt(str)
+	index = 0
+	place = "abcdefghijklmnopqrstuvwxyz"
+	while index < str.length #uses .length to loop through the string that is called
+		letter = str[index] #establishes labeling each index of the string
+		alphabet = place.index(letter) #enables letter to be called out by it's index number.
+		str[index] = place[alphabet - 1] #takes the letter called in str, and advances it to the previous index. 
+		index += 1 #prevents the program from being locked up.
+	end
+	p str #enables an output based on the call
+end
 
 
