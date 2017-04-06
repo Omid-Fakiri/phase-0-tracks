@@ -55,6 +55,7 @@ PSEUDOCODE for encrypt:
 -establish the place variable as the actual alphabet, but add "a" to the end
 =end
 
+#Will advance every string by the next index.
 def encrypt(str)
 	index = 0
 	place = "abcdefghijklmnopqrstuvwxyza" #putting an "a" at the end enables "z" to be read as "a" during the call that includes "z".
@@ -64,7 +65,7 @@ def encrypt(str)
 		str[index] = place[alphabet + 1] #takes the letter called in str, and advances it to the next index.
 		index += 1 #prevents the program from being locked up.
 	end
-	p str #enables an output based on the call
+	str #enables an output based on the call
 end
 
 =begin
@@ -74,6 +75,7 @@ PSEUDOCODE for decrypt:
 -establish the place variable as the actual alphabet.
 =end
 
+#Will advance every string by the previous index.
 def decrypt(str)
 	index = 0
 	place = "abcdefghijklmnopqrstuvwxyz"
@@ -83,15 +85,15 @@ def decrypt(str)
 		str[index] = place[alphabet - 1] #takes the letter called in str, and advances it to the previous index. 
 		index += 1 #prevents the program from being locked up.
 	end
-	p str #enables an output based on the call
+	str #enables an output based on the call
 end
 
 #This is for Release 3
 
-encrypt("abc") #returned "bcd"
-encrypt("zed") #returned "afe"
-decrypt("bcd") #returned "abc"
-decrypt("afe") #returned "zed"
+# encrypt("abc") #returned "bcd"
+# encrypt("zed") #returned "afe"
+# decrypt("bcd") #returned "abc"
+# decrypt("afe") #returned "zed"
 #the methods were written that avoided any edge cases.
 
 =begin
@@ -101,3 +103,31 @@ the first method and inputted it into the next method.
 So, it provided 2 results.  The first result was "txpsegjti", which is the encrypt of swordfish.
 The second result was "swordfish", which is the decrypt of the first result.
 =end
+
+=begin
+This is for Release 5
+=end
+
+#DRIVER CODE
+#Asks a user whether encrypting or decrypting is desired
+puts "Would you like to encrypt or decrypt your password?"
+answer = gets.chomp
+
+#If the user answers something else, ask the user again until given a proper option.
+until answer == "encrypt" || answer == "decrypt"
+	puts "That was not a proper response."
+	puts ""
+	puts "Would you like to encrypt or decrypt your password?"
+	answer = gets.chomp
+end
+
+#Ask the user for the password
+puts "Enter your password:"
+password = gets.chomp
+
+#Alter the password, based on the user's answer to the first question, and print it out to the screen.
+if answer == "encrypt"
+	puts "Here is your new password: #{encrypt(password)}"
+else
+	puts "Here is your new password: #{decrypt(password)}"
+end
