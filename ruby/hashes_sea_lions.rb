@@ -11,3 +11,15 @@ PSEUDOCODE FOR THE USER INTERFACE (DRIVER CODE):
 -Ask the user for further updates.
 -If the user doesn't need an update, exit the program
 =end
+
+
+client_info = {
+	name: "",
+	age: "",
+	address: "",
+	phone: "",
+	email: "",
+	kids: "",
+	rooms: "",
+	decor_theme: "",
+}
