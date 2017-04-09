@@ -23,3 +23,39 @@ client_info = {
 	rooms: "",
 	decor_theme: "",
 }
+
+#These are the statements that the user will see, and provide input for each statement when instructed.
+#It became useful to have the hashname with the desired value inside of the bracket equalling to gets.chomp in order to update that specific hash.
+
+p "What is the client's name?"
+client_info[:name] = gets.chomp
+
+#Using the gets.chomp.to_i would enforce the idea of the user to enter the age in digits.  If a user does otherwise, the return value is 0.
+#Thus, obligating the user to re-enter the data in digits.  This method will also be used for number of children, and number of rooms.
+#This will make the hash easier to read, as there is no need to make this answer into a sentence.
+
+p "How old is #{client_info[:name]}? (Please just type age number.)"
+client_info[:age] = gets.chomp
+
+p "What is the address for #{client_info[:name]}?"
+client_info[:address] = gets.chomp
+
+p "What is #{client_info[:name]}'s phone number?"
+client_info[:phone] = gets.chomp
+
+p "What is #{client_info[:name]}'s email address?"
+client_info[:email] = gets.chomp
+
+p "How many kids does #{client_info[:name]} have? (Please just type the number.)"
+client_info[:kids] = gets.chomp.to_i
+
+p "How many rooms does #{client_info[:name]} have? (Please just type the number.)"
+client_info[:rooms] = gets.chomp.to_i
+
+p "What is the desired decor theme for #{client_info[:name]}?"
+client_info[:decor_theme] = gets.chomp
+
+puts "" #This will provide spacing between the questions and the client hash, which makes everything easier to read.
+
+p client_info
+
