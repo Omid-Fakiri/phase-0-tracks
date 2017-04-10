@@ -42,3 +42,21 @@ executive_branch = {
 
 p executive_branch
 #This just returns the entire nested data structure as a hash.
+
+executive_branch[:cabinet][:names].each do |person| 
+	p person
+end
+=begin
+The cabinet is the heaviest sub-hash of the three.  So, this code above will return
+the names of the members of the cabinet one-by-one.
+=end
+
+executive_branch[:cabinet].each do |person, value| 
+	p value[1]
+end
+=begin
+Again, this deals with the cabinet.  This time, if you want to access a particular
+members data, just type in the index number on the p statement.  Right now, this code
+will return "Rex Tillerson" "Secretary of State" "m". Each item will be returned on
+it's own line.
+=end
