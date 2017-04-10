@@ -60,3 +60,13 @@ members data, just type in the index number on the p statement.  Right now, this
 will return "Rex Tillerson" "Secretary of State" "m". Each item will be returned on
 it's own line.
 =end
+
+p executive_branch[:us_president][:names][0].replace("Hillary Clinton")
+p executive_branch[:us_president][:genders][0].replace('f')
+p executive_branch
+=begin
+This will allow you to replace the name of the U.S. President.  If the gender is 
+different like it is in the above example, you would need that 2nd line of code
+to accomodate that.  Finally, the final line of code will update the nested data
+structure with the changes.
+=end
