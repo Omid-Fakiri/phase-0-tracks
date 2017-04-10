@@ -77,7 +77,6 @@ upper_consonant_adv(lower_consonant_adv(upper_vowel_adv(lower_vowel_adv(flip(fna
 -The user will need to keep inputting names until the user wants to stop.
 -The user will have the opportunity to stop running the program by typing
  'quit', 'Quit', or 'QUIT'.
-=end
 
 loop do
 	puts "What's your first name?"
@@ -147,3 +146,95 @@ loop do
 puts "This is your new name: #{upper_consonant_adv(lower_consonant_adv(upper_vowel_adv(lower_vowel_adv(flip(fname, lname)))))}."
 puts ""
 end
+
+-This is for Release 2
+-This will provide a data structure to store all the names as they are entered.
+-This will need a hash, and it will be called, "agents". It will be placed above
+ the loop.
+-The "full_name" and "fake_name" variables will fill up the hash as the user
+ inputs names. The "full_name" will serve as keys, the "fake_name" will serve as values.
+-The combined methods will use the full_name, fake_name, and print out a statement
+ that the full name is also known as the fake name.
+-Once the user enters "quit" upon entering a first name, the hash containing the
+ full name and fake name will be printed out.
+=end
+
+agents = {}
+
+loop do
+	puts "What's your first name?"
+	fname = gets.chomp
+
+	break if fname == "quit" || fname == "Quit" || fname == "QUIT"
+
+	puts "What's your last name?"
+	lname = gets.chomp
+
+	def flip(fname, lname)
+  "#{lname} #{fname}"
+	end
+
+	def lower_vowel_adv(str)
+  	vowels = ["a", "e", "i", "o", "u"]
+  	str = str.split('')
+  	str_new = str.map do |char|
+    	if vowels.include?(char)
+      	vowels.rotate(1)[vowels.index(char)]
+    	else
+      	char
+    	end
+  	end
+  	str_new.join
+	end
+
+	def upper_vowel_adv(str)
+  	vowels = ["A", "E", "I", "O", "U"]
+  	str = str.split('')
+  	str_new = str.map do |char|
+    	if vowels.include?(char)
+      	vowels.rotate(1)[vowels.index(char)]
+    	else
+      	char
+    	end
+  	end
+  	str_new.join
+	end
+
+	def lower_consonant_adv(str)
+  	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+  	str = str.split('')
+  	str_new = str.map do |char|
+    	if consonants.include?(char)
+      	consonants.rotate(1)[consonants.index(char)]
+    	else
+      	char
+    	end
+  	end
+  	str_new.join
+	end
+
+	def upper_consonant_adv(str)
+	consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+  str = str.split('')
+  str_new = str.map do |char|
+    	if consonants.include?(char)
+      	consonants.rotate(1)[consonants.index(char)]
+    	else
+      	char
+    	end
+  	end
+  	str_new.join
+	end
+
+  full_name = "#{fname} #{lname}"
+  fake_name = "#{upper_consonant_adv(lower_consonant_adv(upper_vowel_adv(lower_vowel_adv(flip(fname, lname)))))}" 
+
+  agents[full_name] = fake_name
+
+  agents.each do |full_name, fake_name|
+  	p "#{full_name} is also known as #{fake_name}."
+  	p
+  end
+end
+
+puts agents
