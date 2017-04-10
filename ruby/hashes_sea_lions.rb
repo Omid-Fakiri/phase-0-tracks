@@ -59,3 +59,30 @@ puts "" #This will provide spacing between the questions and the client hash, wh
 
 p client_info
 
+puts "" #This will provide spacing between the hash and the question asking the user if updates are needed.
+
+###################################################################################################################################################
+
+loop do
+	puts ""
+
+	p "Please list any additional corrections/updates that are needed for #{client_info[:name]}."
+	input = gets.chomp
+	break if input == "done" || input == "none"
+
+	p "What would you like to change #{input} to?"
+	input = input.to_sym
+	client_info[input] = gets.chomp
+end	
+
+p client_info
+	
+
+
+
+
+
+
+
+
+
