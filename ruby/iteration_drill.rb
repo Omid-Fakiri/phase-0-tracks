@@ -5,21 +5,62 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
-# ----
+
+zombie_apocalypse_supplies.each {|zombie| print zombie, " * " }
+
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
-# ----
+
+i = 1
+while i < zombie_apocalypse_supplies.length
+  supply = zombie_apocalypse_supplies[i]
+  idx = i
+  while (idx > 0 && zombie_apocalypse_supplies[idx-1].downcase > supply.downcase)
+    zombie_apocalypse_supplies[idx] = zombie_apocalypse_supplies[idx-1]
+    idx = idx-1
+  end
+  zombie_apocalypse_supplies[idx] = supply
+  i +=1
+end
+
+zombie_apocalypse_supplies
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
-# ----
+
+def supply_check(array, item)
+  there = false
+  arr.each do |supply|
+    if item_to_check.downcase == supply.downcase 
+      there = true
+    end
+  end
+  if there == true
+    puts "YES, #{item} was found in the zombie apocalypse supplies"
+  else
+    puts "Sorry, #{item} is not in the zombie supplies"
+  end
+end
+supply_checker(zombie_apocalypse_supplies, "shotgun")
+supply_checker(zombie_apocalypse_supplies, "watch")
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
-# ----
+
+def carry_five_items(item)
+i = 0
+new_items = []  
+  while i < 5
+    new_items.push(item[i])
+    i += 1
+  end
+items = new_items
+end
+
+puts carry_five_items(zombie_apocalypse_supplies)
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
@@ -28,7 +69,15 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
-# ----
+
+def combine_supplies(array1, array2) 
+combined_array = []
+array1.each { |i| combined_array.push(i) }
+array2.each { |i| combined_array.push(i) }
+combined_array = combined_array.uniq
+end
+
+puts combine_supplies(zombie_apocalypse_supplies, other_survivor_supplies)
 
 # Hash Drills
 
