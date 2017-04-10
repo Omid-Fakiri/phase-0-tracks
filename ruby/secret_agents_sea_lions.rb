@@ -53,43 +53,58 @@ PSEUDOCODE for encrypt:
 -define the encrypt method (with str as the parameter)
 -set the index to 0
 -establish the place variable as the actual alphabet, but add "a" to the end
-=end
+
 
 #Will advance every string by the next index.
 def encrypt(str)
-	index = 0
-	place = "abcdefghijklmnopqrstuvwxyza" #putting an "a" at the end enables "z" to be read as "a" during the call that includes "z".
-	while index < str.length #uses .length to loop through the string that is called
-		letter = str[index] #establishes labeling each index of the string
-		alphabet = "abcdefghijklmnopqrstuvwxyz".index(letter) #enables letter to be called out by it's index number.
-		str[index] = place[alphabet + 1] #takes the letter called in str, and advances it to the next index.
-		index += 1 #prevents the program from being locked up.
-	end
-	str #enables an output based on the call
+    letters = str.split('')
+    letters.each do |letter|
+        print letter.next
+        str = letters.join('')
+    end
 end
 
-=begin
 PSEUDOCODE for decrypt:
 -define the decrypt method (with str as the parameter)
 -set the index to 0
 -establish the place variable as the actual alphabet.
-=end
+
 
 #Will advance every string by the previous index.
 def decrypt(str)
-	index = 0
-	place = "abcdefghijklmnopqrstuvwxyz"
-	while index < str.length #uses .length to loop through the string that is called
-		letter = str[index] #establishes labeling each index of the string
-		alphabet = place.index(letter) #enables letter to be called out by it's index number.
-		str[index] = place[alphabet - 1] #takes the letter called in str, and advances it to the previous index. 
-		index += 1 #prevents the program from being locked up.
-	end
-	str #enables an output based on the call
+    letters = str.split('')
+    letters.each do |letter|
+        print (letter.ord-1).chr
+        str = letters.join('')
+    end
+end
+=end
+#This is for Release 3
+def encrypt(str)
+    letters = str.split('')
+    encrpyted_phrase = ''
+    letters.each do |letter|
+        if letter == 'z'
+            encrpyted_phrase << 'a'
+        else
+            encrpyted_phrase << letter.next
+        end
+    end
+    p encrpyted_phrase
 end
 
-#This is for Release 3
-
+def decrypt(str)
+    letters = str.split('')
+    decrypted_phrase = ''
+    letters.each do |letter|
+        if letter == 'a'
+            decrypted_phrase << 'z'
+        else
+            decrypted_phrase << (letter.ord-1).chr
+        end
+    end
+    p decrypted_phrase
+end
 # encrypt("abc") #returned "bcd"
 # encrypt("zed") #returned "afe"
 # decrypt("bcd") #returned "abc"
