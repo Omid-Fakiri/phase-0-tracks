@@ -10,7 +10,7 @@ def numbers
 end
 
 numbers { |a, b, c| puts (a + b + c) }
-=end
+
 
 #This is for Release 1
 #array:
@@ -42,3 +42,36 @@ favorite_movies.map! do |film|
 end
 
 p favorite_movies
+=end
+
+#This is for Release 2
+num = [1, 2, 3, 4, 5]
+numtext = {"one" => 1, "two" => 2, "three" => 3, "four" => 4, "five" => 5}
+
+#This is problem #1
+num.delete_if {|num| num % 2 == 0}
+p num
+
+numtext.delete_if {|num, numtext| num.length > 4}
+p numtext
+
+#This is problem #2
+num.select! {|num| num % 2 == 0}
+p num
+
+numtext.select! {|num, numtext| num.length > 4}
+p numtext
+
+#This is problem #1
+num.keep_if {|num| num % 2 == 0}
+p num
+
+numtext.keep_if {|num, numtext| num.length > 4}
+p numtext
+
+#This is problem #4
+num = num.drop_while {|num| num % 2 == 0}
+p num
+
+numtext = numtext.drop_while {|num, numtext| num.length < 4}
+p numtext
