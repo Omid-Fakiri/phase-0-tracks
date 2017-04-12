@@ -30,7 +30,7 @@ class Santa
 		@gender = gender
 		@ethnicity = ethnicity
 		@rank = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		@age = rand(140)
 	end
 
 	def speak
@@ -41,7 +41,7 @@ class Santa
 		puts "That was a good #{cookie} cookie!"
 	end
 
-	def celebrate_birthday
+	def celebrate_birthday(age)
 		@age += 1
 	end
 
@@ -52,18 +52,25 @@ class Santa
 
 end
 
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+reindeer = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+
+
+index = 0
+while index < 50000
+puts ""
+santa = Santa.new(genders.sample, ethnicities.sample)
 santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
+santas << santa
+	santas.each do
+			puts "This Santa is #{santa.age} years old."
+			puts "This Santa is identifies as: #{santa.gender}, #{santa.ethnicity}."
+			puts "This is the reindeer ranking for this Santa:"
+			p santa.get_mad_at(reindeer.sample)
+			puts "This Santa is now #{santa.celebrate_birthday(@age)} years old after the birthday."
+	end
+	index += 1
 end
 
-p santas
-
-# santa = Santa.new("male", "hispanic")
-# santa.celebrate_birthday
-# santa.get_mad_at("Vixen")
-# santa.gender = "female"
-
-
+santas
