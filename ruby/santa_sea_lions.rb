@@ -22,24 +22,15 @@ santa.eat_milk_and_cookies("chocolate chip")
 
 
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
 		@rank = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
-	end
-
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
 	end
 
 	def speak
@@ -61,17 +52,18 @@ class Santa
 
 end
 
-# santas = []
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
-# end
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
 
-# p santas
+p santas
 
-santa = Santa.new("male", "hispanic")
-santa.celebrate_birthday
-santa.get_mad_at("Vixen")
-santa.gender = "female"
+# santa = Santa.new("male", "hispanic")
+# santa.celebrate_birthday
+# santa.get_mad_at("Vixen")
+# santa.gender = "female"
+
 
