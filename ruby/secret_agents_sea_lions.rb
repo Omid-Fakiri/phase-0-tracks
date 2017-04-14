@@ -78,48 +78,114 @@ def decrypt(str)
         str = letters.join('')
     end
 end
-=end
-#This is for Release 3
+
+This is for Release 3
+The intent here is to provide the .each, .map, and .map! methods in order to make this work.
+The .map! will be the uncommented out methods.
+
+These methods uses the .map
+
 def encrypt(str)
-    letters = str.split('')
-    encrpyted_phrase = ''
-    letters.each do |letter|
-        if letter == 'z'
-            encrpyted_phrase << 'a'
-        else
-            encrpyted_phrase << letter.next
-        end
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  array = str.split('')
+  array_new = array.map do |letter|
+    if letter == letters[25]
+      letter = letters[0]
+    else
+      letter.next
     end
-    p encrpyted_phrase
+  end
+  array_new.join
 end
 
 def decrypt(str)
-    letters = str.split('')
-    decrypted_phrase = ''
-    letters.each do |letter|
-        if letter == 'a'
-            decrypted_phrase << 'z'
-        else
-            decrypted_phrase << (letter.ord-1).chr
-        end
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  array = str.split('')
+  array_new = array.map do |letter|
+    if letter == letters[0]
+      letter = letters[25]
+    else
+      (letter.ord-1).chr
     end
-    p decrypted_phrase
+  end
+    array_new.join
 end
+=end
+#These methods uses the .map!
+
+def encrypt(str)
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  array = str.split('')
+  array.map! do |letter|
+    if letter == letters[25]
+      letter = letters[0]
+    else
+      letter.next
+    end
+  end
+  array.join
+end
+
+def decrypt(str)
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  array = str.split('')
+  array.map! do |letter|
+    if letter == letters[0]
+      letter = letters[25]
+    else
+      (letter.ord-1).chr
+    end
+  end
+  array.join
+end
+
+=begin
+These methods uses the .each
+
+def encrypt(str)
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  new_letters = []
+  array = str.split('')
+  array.each do |letter|
+    if letter == letters[25]
+      letter = letters[0]
+      new_letters << letter
+    else
+      new_letters << letter.next
+    end
+  end
+  new_letters.join
+end
+
+
+def decrypt(str)
+  letters = "abcdefghijklmnopqrstuvwxyz"
+  new_letters = []
+  array = str.split('')
+  array.each do |letter|
+    if letter == letters[0]
+      letter = letters[25]
+      new_letters << letter
+    else
+      new_letters << (letter.ord-1).chr
+    end
+  end
+  new_letters.join
+end
+
 # encrypt("abc") #returned "bcd"
 # encrypt("zed") #returned "afe"
 # decrypt("bcd") #returned "abc"
 # decrypt("afe") #returned "zed"
-#the methods were written that avoided any edge cases.
 
-=begin
 This is for Release 4
 Calling decrypt(encrypt("swordfish")) worked because it took the string result of
 the first method and inputted it into the next method.
 So, it provided 2 results.  The first result was "txpsegjti", which is the encrypt of swordfish.
 The second result was "swordfish", which is the decrypt of the first result.
-=end
 
-=begin
+
+
 This is for Release 5
 =end
 
