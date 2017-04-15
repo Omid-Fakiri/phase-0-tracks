@@ -1,5 +1,3 @@
-require_relative 'todo_list_sea_lions'
-
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
