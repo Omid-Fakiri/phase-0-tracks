@@ -159,6 +159,80 @@ end
  full name and fake name will be printed out.
 =end
 
+def flip(full_name)
+  array = full_name.split
+  array_reverse = array.reverse
+  full_name = array_reverse.join(' ')
+end
+
+def lower_vowel_adv(str)
+  vowels = "aeiou"
+  array = str.split('')
+  array.map! do |vowel|
+    if vowels.index(vowel)
+      if vowel == vowels[4]
+        vowel = vowels[0]
+      else
+        vowel = vowels[vowels.index(vowel) + 1]
+      end
+    else
+      vowel
+    end
+  end
+  array.join
+end
+
+def upper_vowel_adv(str)
+  vowels = "AEIOU"
+  array = str.split('')
+  array.map! do |vowel|
+    if vowels.index(vowel)
+      if vowel == vowels[4]
+        vowel = vowels[0]
+      else
+        vowel = vowels[vowels.index(vowel) + 1]
+      end
+    else
+      vowel
+    end
+  end
+  array.join
+end
+
+def lower_consonant_adv(str)
+  consonants = "bcdfghjklmnpqrstvwxyz"
+  array = str.split('')
+  array.map! do |consonant|
+    if consonants.index(consonant)
+      if consonant == consonants[20]
+        consonant = consonants[0]
+      else
+        consonant = consonants[consonants.index(consonant) + 1]
+      end
+    else
+      consonant
+    end
+  end
+  array.join
+end
+
+def upper_consonant_adv(str)
+  consonants = "BCDFGHJKLMNPQRSTVWXYZ"
+  array = str.split('')
+  array = array.map! do |consonant|
+    if consonants.index(consonant)
+      if consonant == consonants[20]
+        consonant = consonants[0]
+      else
+        consonant = consonants[consonants.index(consonant) + 1]
+      end
+    else
+      consonant
+    end
+  end
+  array.join
+end
+
 agents = {}
 
 loop do
@@ -167,68 +241,8 @@ loop do
   full_name = gets.chomp
 
   break if full_name == "quit" || full_name == "Quit" || full_name == "QUIT"
-
-  def flip(full_name)
-    array = full_name.split
-    array_reverse = array.reverse
-    full_name = array_reverse.join(' ')
-  end
-
-  def lower_vowel_adv(str)
-    vowels = ["a", "e", "i", "o", "u"]
-    str = str.split('')
-    str_new = str.map do |char|
-      if vowels.include?(char)
-        vowels.rotate(1)[vowels.index(char)]
-      else
-        char
-      end
-    end
-    str_new.join
-  end
-
-  def upper_vowel_adv(str)
-    vowels = ["A", "E", "I", "O", "U"]
-    str = str.split('')
-    str_new = str.map do |char|
-      if vowels.include?(char)
-        vowels.rotate(1)[vowels.index(char)]
-      else
-        char
-      end
-    end
-    str_new.join
-  end
-
-  def lower_consonant_adv(str)
-    consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-    str = str.split('')
-    str_new = str.map do |char|
-      if consonants.include?(char)
-        consonants.rotate(1)[consonants.index(char)]
-      else
-        char
-      end
-    end
-    str_new.join
-  end
-
-  def upper_consonant_adv(str)
-  consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
-  str = str.split('')
-  str_new = str.map do |char|
-      if consonants.include?(char)
-        consonants.rotate(1)[consonants.index(char)]
-      else
-        char
-      end
-    end
-    str_new.join
-  end
-
   real_name = "#{full_name}"
   fake_name = "#{upper_consonant_adv(lower_consonant_adv(upper_vowel_adv(lower_vowel_adv(flip(full_name)))))}" 
-
   agents[real_name] = fake_name
 
   agents.each do |real_name, fake_name|
