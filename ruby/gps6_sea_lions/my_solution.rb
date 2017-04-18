@@ -4,8 +4,9 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#require_relative references a specific file in current directory.
+#require reaches out to the ruby path to require a file.
+
 require_relative 'state_data'
 
 class VirusPredictor
