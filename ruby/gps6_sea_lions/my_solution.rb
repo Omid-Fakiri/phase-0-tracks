@@ -1,7 +1,7 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# We spent [3] hours on this challenge.
 
 # EXPLANATION OF require_relative
 #require_relative references a specific file in current directory.
@@ -20,16 +20,34 @@ class VirusPredictor
 
   #works as a runner method by combining these 2 methods into it.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths#(@population_density, @population, @state)
+    speed_of_spread#(@population_density, @state)
   end
 
   private
 
   #creates conditional statements and returns number_of_deaths
   #based on the value of population density.
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths#(population_density, population, state)
     # predicted deaths is solely based on population density
+
+    # case number_of_deaths 
+    # when @population_density >= 200 then (@population * 0.4).floor
+    # when @population_density >= 150 then (@population * 0.3).floor
+    # when @population_density >= 100 then (@population * 0.2).floor
+    # when @population_density >= 50 then (@population * 0.1).floor
+    # else 
+    #   (@population * 0.05).floor
+    # end
+
+    # case number_of_deaths 
+    # when @population_density >= 200 then (@population * 0.4).floor
+    # when @population_density >= 150 && @population_density < 200 then (@population * 0.3).floor
+    # when @population_density >= 100 && @population_density < 150 then (@population * 0.2).floor
+    # when @population_density >= 50 && @population_density < 100 then (@population * 0.1).floor
+    # else 
+    #   (@population * 0.05).floor
+    # end
 
     case 
     when @population_density >= 200 then number_of_deaths = (@population * 0.4).floor
@@ -58,12 +76,21 @@ class VirusPredictor
 
   #creates conidtional statements and returns speed of spread
   #based on the value of population density.
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread#(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    case 
+    # case speed
+    # when @population_density >= 200 then += 0.5
+    # when @population_density >= 150 && @population_density < 200 then += 1
+    # when @population_density >= 100 && @population_density < 150 then += 1.5
+    # when @population_density >= 50 && @population_density < 100 then += 2
+    # else
+    #   += 2.5
+    # end
+
+    case  
     when @population_density >= 200 then speed += 0.5
     when @population_density >= 150 && @population_density < 200 then speed += 1
     when @population_density >= 100 && @population_density < 150 then speed += 1.5
@@ -96,9 +123,6 @@ end
  # initialize VirusPredictor for each state
 
 STATE_DATA.each do |state, state_info|
-  # a = VirusPredictor.new(state, state_info[:population], state_info[:population_density])
-  # a.virus_effects
-  #VirusPredictor.new(state, STATE_DATA[state][:population], state_info[:population_density]).virus_effects
   VirusPredictor.new(state, state_info[:population_density], state_info[:population]).virus_effects
 end
 
@@ -116,4 +140,19 @@ end
 
 
 #=======================================================================
-# Reflection Section
+=begin
+Reflection Section
+This is for Release 8
+
+1. The first hash uses the rocket symbols, while the second hash uses the ":" symbols.
+
+2. "require_relative" references a specific file in current directory, while "require" reaches out to the ruby path to require a file. 
+
+3. You can iterate through a hash with the each, each_key, and each_value methods.  The each will help you iterate through the key & value pair,
+the each_key will help you iterate through the keys, and the each_value will help you iterate through the values.
+
+4. I noticed that some were instance variables, and some others were local variables.  I also noticed that some of them were being used
+repeatedly as arguments and parameters when it was not necessary.
+
+5. I mostly solidified how to iterate through a hash. 
+=end
