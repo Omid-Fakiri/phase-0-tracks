@@ -10,7 +10,7 @@
 require_relative 'state_data'
 
 class VirusPredictor
-  
+
   #assigns the 3 instance variables, takes in the 3 parameters.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
@@ -20,28 +20,37 @@ class VirusPredictor
 
   #works as a runner method by combining these 2 methods into it.
   def virus_effects
-    predicted_deaths
-    speed_of_spread
+    predicted_deaths(@population_density, @population, @state)
+    speed_of_spread(@population_density, @state)
   end
 
   private
 
   #creates conditional statements and returns number_of_deaths
   #based on the value of population density.
-  def predicted_deaths
+  def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
-    #research case statements here, are they effective? 
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
+
+    case 
+    when @population_density >= 200 then number_of_deaths = (@population * 0.4).floor
+    when @population_density >= 150 && @population_density < 200 then number_of_deaths = (@population * 0.3).floor
+    when @population_density >= 100 && @population_density < 150 then number_of_deaths = (@population * 0.2).floor
+    when @population_density >= 50 && @population_density < 100 then number_of_deaths = (@population * 0.1).floor
+    else 
       number_of_deaths = (@population * 0.05).floor
     end
+
+    # if @population_density >= 200
+    #   number_of_deaths = (@population * 0.4).floor
+    # elsif @population_density >= 150
+    #   number_of_deaths = (@population * 0.3).floor
+    # elsif @population_density >= 100
+    #   number_of_deaths = (@population * 0.2).floor
+    # elsif @population_density >= 50
+    #   number_of_deaths = (@population * 0.1).floor
+    # else
+    #   number_of_deaths = (@population * 0.05).floor
+    # end
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -49,22 +58,31 @@ class VirusPredictor
 
   #creates conidtional statements and returns speed of spread
   #based on the value of population density.
-  def speed_of_spread #in months
+  def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
+    case 
+    when @population_density >= 200 then speed += 0.5
+    when @population_density >= 150 && @population_density < 200 then speed += 1
+    when @population_density >= 100 && @population_density < 150 then speed += 1.5
+    when @population_density >= 50 && @population_density < 100 then speed += 2
     else
       speed += 2.5
     end
+
+    # if @population_density >= 200
+    #   speed += 0.5
+    # elsif @population_density >= 150
+    #   speed += 1
+    # elsif @population_density >= 100
+    #   speed += 1.5
+    # elsif @population_density >= 50
+    #   speed += 2
+    # else
+    #   speed += 2.5
+    # end
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
@@ -77,15 +95,12 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-#viruspredictor = VirusPredictor.new
-
 STATE_DATA.each do |state, state_info|
-  a = VirusPredictor.new(state, state_info[:population], state_info[:population_density])
-  a.virus_effects
+  # a = VirusPredictor.new(state, state_info[:population], state_info[:population_density])
+  # a.virus_effects
   #VirusPredictor.new(state, STATE_DATA[state][:population], state_info[:population_density]).virus_effects
+  VirusPredictor.new(state, state_info[:population_density], state_info[:population]).virus_effects
 end
-
-
 
 # alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 # alabama.virus_effects
