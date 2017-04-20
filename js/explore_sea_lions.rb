@@ -32,3 +32,24 @@ Three differences between JavaScript and Ruby in regards to If Statements:
 3. The parentheses is required to help declare a function. Otherwise, you get a "syntax error: unexpected token, expected (".
 4. If you take out the parentheses from the function call, the code will not execute.  There will not be an error message, it just won't execute.
 =end
+
+=begin
+-This is for Release 3
+
+1. 
+
+for (var number = 0; number <= 10; number++) {
+  console.log(number);
+}
+This counts from 0 to 10.
+
+2. Changing the incrementer from ++ to +=2 will count the even numbers up to 10.
+
+3. 
+
+for (var number = 10; number >= 0; number--) {
+  console.log(number);
+}
+This counts down from 10 to 0
+=end
+
