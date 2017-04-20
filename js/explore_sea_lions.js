@@ -69,3 +69,8 @@ function reverse(s) {
 
 console.log(reverse("hello"));
 //This reverses the string from "hello" to "olleh".
+
+if (1 == 1) {
+	console.log(reverse("this works"));
+} 
+//This reverses the string from "this works" to "skrow siht"
