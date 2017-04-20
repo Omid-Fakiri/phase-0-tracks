@@ -17,9 +17,18 @@ fixes.
 -This is for Release 1
 
 Three differences between JavaScript and Ruby in regards to If Statements:
-1. For JavaScript, you MUST use parenthesis to surround your variables in the conditional statements.  However, in Ruby, that is an option.
+1. For JavaScript, you MUST use parentheses to surround your variables in the conditional statements.  However, in Ruby, that is an option.
 
 2. In Javascript, the else if statement is worded, "else if". In Ruby, the statement is "elsif".
 
 3. In Javascript, there is no "end" statement, whereas there is one in Ruby.
+=end
+
+=begin
+-This is for Release 2
+
+1. Functions are declared with the "function" keyword.
+2. Javascript does not have implicit returns.  Any attempts will return "undefined".
+3. The parentheses is required to help declare a function. Otherwise, you get a "syntax error: unexpected token, expected (".
+4. If you take out the parentheses from the function call, the code will not execute.  There will not be an error message, it just won't execute.
 =end
