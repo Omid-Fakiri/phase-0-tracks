@@ -13,3 +13,13 @@ of the characters. If I do it now, I will lose the comment capability here, and 
 fixes.
 =end
 
+=begin
+-This is for Release 1
+
+Three differences between JavaScript and Ruby in regards to If Statements:
+1. For JavaScript, you MUST use parenthesis to surround your variables in the conditional statements.  However, in Ruby, that is an option.
+
+2. In Javascript, the else if statement is worded, "else if". In Ruby, the statement is "elsif".
+
+3. In Javascript, there is no "end" statement, whereas there is one in Ruby.
+=end
