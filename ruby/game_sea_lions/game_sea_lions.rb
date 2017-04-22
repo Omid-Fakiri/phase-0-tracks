@@ -23,8 +23,17 @@ class Game
 
 	def play(letter)
 		#update(letter)
+		count
 		guessed_letters(letter)
 		game_done
+	end
+
+	def count
+		if @guesses == 1
+			@guess_count = "guess"
+		else
+			@guess_count = "guesses"
+		end
 	end
 #the user takes a guess. 
 #the program checks to see if the user has taken the guess before.
@@ -44,12 +53,12 @@ class Game
 		if @used_letters.include?(letter)
 			#return true 
 			puts "You have already guessed that letter. Try again!"
-			puts "You still have #{@guesses} guesses left."
+			puts "You still have #{@guesses} #{count} left."
 		else
 			#return false
 		  #@used_letters << letter
 		  update(letter)
-		 end
+		end
 	end
 
 	def update(letter)
@@ -63,12 +72,12 @@ class Game
 				end
 				@used_letters << letter
 				puts "Good job! You are making progress."
-				puts "You still have #{@guesses} guesses left."
+				puts "You still have #{@guesses} #{count} left."
 			else
 				@guesses -= 1
 				@used_letters << letter
 				puts "Sorry. That is incorrect."
-				puts "You now have #{@guesses} guesses left."
+				puts "You now have #{@guesses} #{count} left."
 			end				
 			puts @hidden_word.join(' ')
 			#guessed_letters(letter)
