@@ -85,7 +85,10 @@ class Game
 
 	def game_done
 		if @guesses == 0 && @hidden_word.include?("_")
-			puts "Sorry, you lose! Better luck next time"
+			#puts "Sorry, you lose! Better luck next time"
+			puts "Sorry, you lose!"
+			puts "The word was: #{@word}"
+			puts "Better luck next time."
 			@game_over = true
 			exit
 		elsif @guesses == 1 && !@hidden_word.include?("_")
