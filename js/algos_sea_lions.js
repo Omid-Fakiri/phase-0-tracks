@@ -42,3 +42,51 @@ var dog = {name: 'Spot', 'age': 3, isGoodDog: true};
 -set the if conditional statement to have either the first key's values to equal one another
 or the second key's value to equal one another to return true.
 -Otherwise, return false.*/
+
+let object_1 = {
+  name: "Steven", 
+  age: 54
+  
+};
+let object_2 = {
+  name: "Tamir", 
+  age: 54
+  
+}; //this returned 'true'
+
+let object_1 = {
+  name: "Jack", 
+  age: 21
+  
+};
+let object_2 = {
+  name: "Jack", 
+  age: 36
+  
+};//this returned 'true'
+
+let object_1 = {
+  name: "Nick", 
+  age: 37
+  
+};
+let object_2 = {
+  name: "Nikki", 
+  age: 31
+  
+};//this returned 'false'
+
+
+function compare(object_1, object_2) {
+	if (object_1.name == object_2.name || object_1.age == object_2.age) {
+		return true;
+	} else {
+	  return false;
+	}
+}
+
+console.log(compare(object_1, object_2));
+
+/* I wasn't sure how to access the the values of the key/value pairs.  So, I had to
+look this up on google, and found that "let" allows this. Other than that, I figured
+everything else out.*/ 
