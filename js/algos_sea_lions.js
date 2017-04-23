@@ -20,3 +20,25 @@ function calculate(array) {
 }
 
 calculate(array);
+
+/*This is for Release 1
+PEUSOCODE:
+-Use the following codes below as reference: 
+===============================================================================
+var isOver21 = true;
+var drinksAlcohol = true;
+
+if (isOver21 && drinksAlcohol) {
+	console.log("Would you like a drink -- beer or wine, perhaps?");
+} else if (isOver21 && !drinksAlcohol) {
+	console.log("Can I get you an ice water, coffee, tea, or soft drink?");
+} else {
+	console.log("One Shirley Temple, coming up!");
+===============================================================================
+var dog = {name: 'Spot', 'age': 3, isGoodDog: true};
+
+-Create variables called object_1 and object_2.
+-Set object_1 and object_2 as parameters in the function
+-set the if conditional statement to have either the first key's values to equal one another
+or the second key's value to equal one another to return true.
+-Otherwise, return false.*/
