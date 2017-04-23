@@ -1,5 +1,5 @@
 class Game
-	attr_reader :guesses, :hidden_word, :game_over
+	attr_reader :word, :guesses, :hidden_word, :used_letters, :game_over
 
 	def initialize(word)
 		@word = word
@@ -74,24 +74,24 @@ class Game
 	end
 end
 
-puts "Welcome to the word guess game!"
-puts 
+# puts "Welcome to the word guess game!"
+# puts 
 
-puts "Enter the secret word:"
-word = gets.chomp
+# puts "Enter the secret word:"
+# word = gets.chomp
 
-game = Game.new(word)
-
-
-puts "You have #{game.guesses} guesses to work with. Good Luck!"
-puts 
-puts "Enter a letter:"
-puts game.hidden_word.join(' ')
-letter = gets.chomp
+# game = Game.new(word)
 
 
-while !game.game_over
-	game.play(letter)
-	puts "Enter another letter:"
-	letter = gets.chomp
-end
+# puts "You have #{game.guesses} guesses to work with. Good Luck!"
+# puts 
+# puts "Enter a letter:"
+# puts game.hidden_word.join(' ')
+# letter = gets.chomp
+
+
+# while !game.game_over
+# 	game.play(letter)
+# 	puts "Enter another letter:"
+# 	letter = gets.chomp
+# end
